@@ -12,7 +12,13 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseCors(x => x.
+AllowAnyMethod().
+AllowAnyHeader().
+SetIsOriginAllowed(origin => true).
+AllowCredentials());
+
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
