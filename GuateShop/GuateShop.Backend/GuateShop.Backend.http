@@ -1,0 +1,6 @@
+@GuateShop.Backend_HostAddress = http://localhost:5013
+
+GET {{GuateShop.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
