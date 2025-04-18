@@ -13,6 +13,12 @@ builder.Services.AddDbContext<DataContext>(x =>
 
 var app = builder.Build();
 
+app.UseCors(options => options
+           .AllowAnyMethod()
+           .AllowAnyHeader()
+           .SetIsOriginAllowed(origin => true) // allow any origin
+           .AllowCredentials());
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
